@@ -5,9 +5,6 @@ export const SUCCESS = 'SUCCESS';
 export const FAILED = 'FAILED'
 export const ADDSMURF = "ADDSMURF";
 
-export const fetchStart = () => {
-    return ({type: LOADING})
-}
 export const fetchSuccess = (smurfs) => {
     return ({type: SUCCESS, payload: smurfs})
 }

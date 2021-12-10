@@ -3,11 +3,18 @@ import { LOADING, SUCCESS, FAILED, ADDSMURF} from "../actions";
 export const initialState = {
     smurfs: [
         {
-            id: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-            name: 'Poppa Smurf',
-            position: 'Village Leader',
+            id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+            name:'Poppa Smurf',
+            position:'Village Leader',
             nickname: 'Pops',
             description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+        },
+        {
+            id:"JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ",
+            name:'Smurfette',
+            position:'Beautician',
+            nickname: 'Smurfette',
+            description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
         }
     ],
     isloading: false,
@@ -34,15 +41,12 @@ const reducer = (state = initialState, action) => {
                 isLoading: false,
                 error: action.payload
             })
-
         case ADDSMURF:
             return ({
                 smurfs: [...state.smurfs, action.payload],
                 isLoading: false,
                 error: ""
             })
-
-
         default:
             return state
     }

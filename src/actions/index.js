@@ -4,11 +4,16 @@ export const LOADING = 'LOADING';
 export const SUCCESS = 'SUCCESS';
 export const FAILED = 'FAILED'
 export const ADDSMURF = "ADDSMURF";
-// export const ERROR = 'ERROR';
 
-// export const error = err = {
-//     return ({type: ERROR, payload: err})
-// }
+export const fetchStart = () => {
+    return ({type: LOADING})
+}
+export const fetchSuccess = (smurfs) => {
+    return ({type: SUCCESS, payload: smurfs})
+}
+export const fetchFailed = (err) => {
+    return ({type: FAILED, payload: err})
+}
 
 
 export const fetchSmurfs = () => (dispatch) => {

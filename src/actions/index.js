@@ -12,7 +12,6 @@ export const fetchFailed = (err) => {
     return ({type: FAILED, payload: err})
 }
 
-
 export const fetchSmurfs = () => (dispatch) => {
     dispatch({type: LOADING})
     axios.get('http://localhost:3333/smurfs')

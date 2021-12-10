@@ -1,19 +1,52 @@
+import { LOADING, SUCCESS, FAILED, ADDSMURF} from "../actions";
+
 export const initialState = {
-    smurfs: [],
-    loading: false,
+    smurfs: [
+        {
+            id: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+            name: 'Poppa Smurf',
+            position: 'Village Leader',
+            nickname: 'Pops',
+            description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+        }
+    ],
+    isloading: false,
     error: ''
 }
 
-const reducer = (state = initialState, action)=>{
-    switch(action.type) {
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOADING:
+            return ({
+                smurfs: [],
+                isLoading: true,
+                error: ""
+            })
+        case SUCCESS:
+            return ({
+                smurfs: action.payload,
+                isLoading: false,
+                error: ""
+            })
+        case FAILED:
+            return ({
+                smurfs: [],
+                isLoading: false,
+                error: action.payload
+            })
+
+        case ADDSMURF:
+            return ({
+                smurfs: [...state.smurfs, action.payload],
+                isLoading: false,
+                error: ""
+            })
+
+
         default:
             return state
     }
 }
-
-
-
-
 
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//

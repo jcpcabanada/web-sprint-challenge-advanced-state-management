@@ -125,5 +125,5 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
    <br>
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
    <br>
-   A: Context api is much easier, but redux is proficient and much more efficient, even thought the process is much more work.
+   A: Context api is much easier, but async redux is proficient and much more efficient, even thought the process is much more work.
    <br>
